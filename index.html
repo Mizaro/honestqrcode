@@ -1,40 +1,115 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Get QR Code | Free QR Generator</title>
-<meta name="description" content="Create free QR codes for websites, PDFs, videos, WhatsApp, images, and WiFi. Fast, secure, and client-side." />
-<link rel="stylesheet" href="styles.css" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Get QR Code | Free Privacy-First QR Code Generator</title>
+  <meta name="description" content="Create free QR codes for websites, PDFs, videos, WhatsApp messages, images, and WiFi. Private, fast, client-side, and no signup required.">
+  <meta name="robots" content="index,follow">
+  <meta name="theme-color" content="#111827">
+  <meta property="og:title" content="Get QR Code | Free QR Code Generator">
+  <meta property="og:description" content="Create free QR codes in your browser. No signup. No tracking by default.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://getqrcode.com/">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://getqrcode.com/">
+  <link rel="stylesheet" href="styles.css">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"WebApplication","name":"Get QR Code","url":"https://getqrcode.com/","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","description":"A free privacy-first QR code generator for websites, PDFs, videos, WhatsApp, images, and WiFi.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
+  </script>
 </head>
 <body>
-<header>
-  <h1>Get QR Code</h1>
-  <p>Create free QR codes instantly. Private. Fast. No signup.</p>
-  <a href="https://buymeacoffee.com/yourname" target="_blank" rel="noopener">☕ Buy Me a Coffee</a>
-</header>
+  <header class="hero">
+    <nav class="nav" aria-label="Main navigation">
+      <a class="brand" href="/">Get QR Code</a>
+      <a class="coffee" href="https://buymeacoffee.com/yourname" target="_blank" rel="noopener noreferrer">Buy Me a Coffee</a>
+    </nav>
+    <section class="hero-grid">
+      <div>
+        <p class="eyebrow">Free QR code generator</p>
+        <h1>Create QR codes for websites, PDFs, videos, WhatsApp, images, and WiFi.</h1>
+        <p class="subhead">Fast, private, and simple. Your QR content is generated in your browser and is not uploaded by this website.</p>
+        <a class="primary-link" href="#generator">Create your QR code</a>
+      </div>
+      <div class="hero-card" aria-label="Privacy promise">
+        <strong>Privacy-first</strong>
+        <span>No account. No backend. No tracking by default.</span>
+      </div>
+    </section>
+  </header>
 
-<main>
-  <section>
-    <label for="type">QR Type</label>
-    <select id="type">
-      <option value="url">Website</option>
-      <option value="pdf">PDF</option>
-      <option value="video">Video</option>
-      <option value="whatsapp">WhatsApp</option>
-      <option value="image">Image</option>
-      <option value="wifi">WiFi</option>
-    </select>
+  <main>
+    <section id="generator" class="panel" aria-labelledby="generator-title">
+      <div class="section-heading">
+        <p class="eyebrow">Generator</p>
+        <h2 id="generator-title">Make a QR code</h2>
+        <p>Choose a type, fill the fields, then download your QR code as PNG or SVG.</p>
+      </div>
 
-    <label for="content">Content</label>
-    <textarea id="content" placeholder="Enter content here"></textarea>
+      <div class="app-grid">
+        <form id="qr-form" class="form-card">
+          <label for="qr-type">QR type</label>
+          <select id="qr-type" name="qr-type">
+            <option value="website">Website</option>
+            <option value="pdf">PDF link</option>
+            <option value="video">Video link</option>
+            <option value="whatsapp">WhatsApp message</option>
+            <option value="image">Image link</option>
+            <option value="wifi">WiFi network</option>
+          </select>
 
-    <button id="generateBtn">Generate QR</button>
-    <div id="qr-output"></div>
-  </section>
-</main>
+          <div id="dynamic-fields"></div>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
-<script src="app.js"></script>
+          <details class="advanced">
+            <summary>Design options</summary>
+            <label for="qr-size">Size</label>
+            <select id="qr-size">
+              <option value="256">256 px</option>
+              <option value="512" selected>512 px</option>
+              <option value="1024">1024 px</option>
+            </select>
+            <label for="dark-color">QR color</label>
+            <input id="dark-color" type="color" value="#111827">
+            <label for="light-color">Background color</label>
+            <input id="light-color" type="color" value="#ffffff">
+          </details>
+
+          <button class="button" type="submit">Generate QR code</button>
+          <p id="status" class="status" role="status"></p>
+        </form>
+
+        <aside class="preview-card" aria-label="QR preview">
+          <div id="qr-preview" class="qr-preview"><span>Your QR code will appear here.</span></div>
+          <div class="download-row">
+            <button id="download-png" class="secondary" type="button" disabled>Download PNG</button>
+            <button id="download-svg" class="secondary" type="button" disabled>Download SVG</button>
+          </div>
+          <p class="hint">Always test your QR code before printing or sharing.</p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="content-grid">
+      <article>
+        <h2>Why use a client-side QR generator?</h2>
+        <p>A QR code can contain sensitive content such as a WiFi password, private document link, or prefilled message. This tool generates the QR code locally in your browser so the app does not need to receive your input.</p>
+      </article>
+      <article>
+        <h2>What can I create?</h2>
+        <p>You can create QR codes for public web links, downloadable PDFs, video links, image links, WhatsApp conversations, and WiFi network login details.</p>
+      </article>
+      <article>
+        <h2>Is it free?</h2>
+        <p>Yes. The tool is free to use. The donation button is optional and helps support hosting, maintenance, and improvements.</p>
+      </article>
+    </section>
+  </main>
+
+  <footer>
+    <p>Get QR Code is a free browser-based utility. No signup required.</p>
+  </footer>
+
+  <script src="qrcode-generator.js"></script>
+  <script src="app.js"></script>
 </body>
 </html>
