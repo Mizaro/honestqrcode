@@ -405,3 +405,117 @@ footer {
     font-size: clamp(2.35rem, 15vw, 4rem);
   }
 }
+
+.type-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin-bottom: 1rem;
+}
+
+.type-tab {
+  border: 1px solid var(--border);
+  background: #fff;
+  color: var(--text);
+  border-radius: 999px;
+  padding: 0.45rem 0.75rem;
+  font-size: 0.82rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.type-tab:hover {
+  border-color: #94a3b8;
+}
+
+.type-tab.is-active {
+  background: var(--primary);
+  color: #fff;
+  border-color: var(--primary);
+}
+
+.tab-icon {
+  font-size: 0.95rem;
+}
+
+.dynamic-fields {
+  margin-bottom: 0.5rem;
+}
+
+.design-panel {
+  margin: 1rem 0;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 0.9rem;
+}
+
+.design-panel summary {
+  cursor: pointer;
+  font-weight: 800;
+}
+
+.design-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0 0.75rem;
+  margin-top: 0.75rem;
+}
+
+.design-grid label {
+  margin-top: 0.75rem;
+}
+
+.design-grid .checkbox-row {
+  grid-column: 1 / -1;
+}
+
+.country-code {
+  margin-bottom: 0.25rem;
+}
+
+.inline-radio {
+  border: 0;
+  padding: 0;
+  margin: 1rem 0 0;
+}
+
+.inline-radio legend {
+  font-weight: 750;
+  margin-bottom: 0.4rem;
+}
+
+.inline-radio label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin-right: 1rem;
+  font-weight: 600;
+}
+
+.inline-radio input {
+  width: auto;
+}
+
+.download-row {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+@media (min-width: 520px) {
+  .download-row {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 700px) {
+  .design-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.preview-placeholder {
+  color: var(--muted);
+}
