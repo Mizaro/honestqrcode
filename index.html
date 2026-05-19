@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Get QR Code | Free Permanent QR Codes That Never Expire</title>
-  <meta name="description" content="Create free permanent QR codes that never expire. Generate QR codes for websites, WiFi, WhatsApp, vCard, email, phone, SMS, events, social profiles, PDFs, images, and videos.">
+  <meta name="description" content="Create free permanent QR codes that never expire. Generate QR codes for links, WiFi, WhatsApp, vCard, email, phone, SMS, events, location, PayPal, Bitcoin, and more.">
   <meta name="robots" content="index,follow">
   <meta name="theme-color" content="#111827">
   <meta property="og:title" content="Free Permanent QR Codes That Never Expire">
@@ -15,13 +15,118 @@
   <link rel="canonical" href="https://getqrcode.com/">
   <link rel="stylesheet" href="styles.css">
   <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"WebApplication","name":"Get QR Code","url":"https://getqrcode.com/","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","description":"A free permanent QR code generator for websites, WiFi, WhatsApp, vCard, email, phone, SMS, events, social profiles, PDFs, images, and videos.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
+  {"@context":"https://schema.org","@type":"WebApplication","name":"Get QR Code","url":"https://getqrcode.com/","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","description":"A free permanent QR code generator.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
   </script>
 </head>
 <body>
-  <header class="hero"><nav class="nav" aria-label="Main navigation"><a class="brand" href="/">Get QR Code</a><a class="coffee" href="https://buymeacoffee.com/yourname" target="_blank" rel="noopener noreferrer">Buy Me a Coffee</a></nav><section class="hero-grid"><div><p class="eyebrow">Free permanent QR codes</p><h1>Create Free Permanent QR Codes That Never Expire</h1><p class="subhead">No signup. No hidden paywalls. No forced redirects. Your QR code is generated locally in your browser and stays yours forever.</p><a class="primary-link" href="#generator">Create Permanent QR Code</a></div><div class="hero-card" aria-label="Trust promise"><strong>Static first</strong><span>No expiration. No account required. No tracking by default.</span></div></section></header>
-  <main><section id="generator" class="panel" aria-labelledby="generator-title"><div class="section-heading"><p class="eyebrow">Generator</p><h2 id="generator-title">Create your permanent QR code</h2><p>Choose a type, fill the fields, then download your QR code as PNG or SVG.</p></div><div class="app-grid"><form id="qr-form" class="form-card"><label for="qr-type">QR type</label><select id="qr-type" name="qr-type"><option value="website">Website</option><option value="wifi">WiFi network</option><option value="whatsapp">WhatsApp message</option><option value="vcard">vCard contact</option><option value="email">Email</option><option value="phone">Phone call</option><option value="sms">SMS message</option><option value="event">Calendar event</option><option value="social">Social profile</option><option value="text">Plain text</option><option value="pdf">PDF link</option><option value="image">Image link</option><option value="video">Video link</option></select><div id="dynamic-fields"></div><details class="advanced"><summary>Design options</summary><label for="qr-size">Size</label><select id="qr-size"><option value="256">256 px</option><option value="512" selected>512 px</option><option value="1024">1024 px</option></select><label for="dark-color">QR color</label><input id="dark-color" type="color" value="#111827"><label for="light-color">Background color</label><input id="light-color" type="color" value="#ffffff"></details><button class="button" type="submit">Generate Free QR Code</button><p id="status" class="status" role="status"></p></form><aside class="preview-card" aria-label="QR preview"><div id="qr-preview" class="qr-preview"><span>Your QR code will appear here.</span></div><div class="download-row"><button id="download-png" class="secondary" type="button" disabled>Download PNG</button><button id="download-svg" class="secondary" type="button" disabled>Download SVG</button></div><p class="hint">Always test your QR code before printing or sharing.</p></aside></div></section><section class="content-grid"><article><h2>Why use a permanent QR generator?</h2><p>Static QR codes do not depend on a paid redirect service. Once downloaded, the QR code points directly to your content and does not expire.</p></article><article><h2>What can I create?</h2><p>Create QR codes for links, WiFi, WhatsApp, contacts, email, calls, SMS, calendar events, social profiles, and plain text.</p></article><article><h2>Is everything free?</h2><p>Yes. QR types, PNG, SVG, colors, size, logo upload, and design options are free.</p></article></section></main>
+  <header class="hero">
+    <nav class="nav" aria-label="Main navigation">
+      <a class="brand" href="/">Get QR Code</a>
+      <a class="coffee" href="https://buymeacoffee.com/yourname" target="_blank" rel="noopener noreferrer">Buy Me a Coffee</a>
+    </nav>
+    <section class="hero-grid">
+      <div>
+        <p class="eyebrow">Free permanent QR codes</p>
+        <h1>Create Free Permanent QR Codes That Never Expire</h1>
+        <p class="subhead">No signup. No hidden paywalls. No forced redirects. Your QR code is generated locally in your browser and stays yours forever.</p>
+        <a class="primary-link" href="#generator">Create Permanent QR Code</a>
+      </div>
+      <div class="hero-card" aria-label="Trust promise">
+        <strong>Static first</strong>
+        <span>No expiration. No account required. No tracking by default.</span>
+      </div>
+    </section>
+  </header>
+
+  <main>
+    <section id="generator" class="panel" aria-labelledby="generator-title">
+      <div class="section-heading">
+        <p class="eyebrow">Generator</p>
+        <h2 id="generator-title">Create your permanent QR code</h2>
+        <p>Pick a type, fill the form, customize the design, then download PNG, JPG, or SVG.</p>
+      </div>
+
+      <div class="app-grid">
+        <div class="form-card">
+          <div class="type-tabs" id="type-tabs" role="tablist" aria-label="QR code type"></div>
+          <form id="qr-form" novalidate>
+            <div id="dynamic-fields" class="dynamic-fields"></div>
+            <details class="design-panel" open>
+              <summary>Colors &amp; style</summary>
+              <div class="design-grid">
+                <label for="qr-size">Export size</label>
+                <select id="qr-size">
+                  <option value="256">256 px</option>
+                  <option value="512" selected>512 px</option>
+                  <option value="1024">1024 px</option>
+                  <option value="2048">2048 px</option>
+                </select>
+                <label for="qr-ecc">Error correction</label>
+                <select id="qr-ecc">
+                  <option value="L">Low (7%)</option>
+                  <option value="M" selected>Medium (15%)</option>
+                  <option value="Q">Quartile (25%)</option>
+                  <option value="H">High (30%)</option>
+                </select>
+                <label for="dark-color">Foreground</label>
+                <input id="dark-color" type="color" value="#111827">
+                <label for="light-color">Background</label>
+                <input id="light-color" type="color" value="#ffffff">
+                <label class="checkbox-row" for="transparent-bg"><input id="transparent-bg" type="checkbox"> Transparent background</label>
+                <label class="checkbox-row" for="gradient-enable"><input id="gradient-enable" type="checkbox"> Gradient foreground</label>
+                <label for="gradient-color">Second color</label>
+                <input id="gradient-color" type="color" value="#2563eb" disabled>
+                <label class="checkbox-row" for="gradient-radial"><input id="gradient-radial" type="checkbox" disabled> Radial gradient</label>
+                <label for="module-style">Module style</label>
+                <select id="module-style">
+                  <option value="square">Square</option>
+                  <option value="rounded">Rounded</option>
+                  <option value="dot">Dots</option>
+                  <option value="diamond">Diamond</option>
+                </select>
+                <label for="marker-style">Marker style</label>
+                <select id="marker-style">
+                  <option value="square">Square</option>
+                  <option value="rounded">Rounded</option>
+                  <option value="circle">Circle</option>
+                  <option value="leaf">Leaf</option>
+                </select>
+                <label class="checkbox-row" for="custom-marker-colors"><input id="custom-marker-colors" type="checkbox"> Custom marker colors</label>
+                <label for="marker-border-color">Marker border</label>
+                <input id="marker-border-color" type="color" value="#111827" disabled>
+                <label for="marker-center-color">Marker center</label>
+                <input id="marker-center-color" type="color" value="#111827" disabled>
+                <label for="logo-file">Logo</label>
+                <input id="logo-file" type="file" accept="image/png,image/jpeg,image/svg+xml,image/webp">
+                <label class="checkbox-row" for="logo-remove-bg"><input id="logo-remove-bg" type="checkbox" checked> White pad behind logo</label>
+                <label for="frame-label">Label under QR (optional)</label>
+                <input id="frame-label" type="text" placeholder="Scan me">
+              </div>
+            </details>
+            <button class="button" type="submit">Generate Free QR Code</button>
+            <p id="status" class="status" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+        <aside class="preview-card" aria-label="QR preview">
+          <div id="qr-preview" class="qr-preview"><span class="preview-placeholder">Your QR code will appear here.</span></div>
+          <div class="download-row">
+            <button id="download-png" class="secondary" type="button" disabled>PNG</button>
+            <button id="download-jpg" class="secondary" type="button" disabled>JPG</button>
+            <button id="download-svg" class="secondary" type="button" disabled>SVG</button>
+            <button id="copy-payload" class="secondary" type="button" disabled>Copy data</button>
+          </div>
+          <p class="hint">Preview updates as you type. Always test before printing.</p>
+        </aside>
+      </div>
+    </section>
+    <section class="content-grid">
+      <article><h2>Why use a permanent QR generator?</h2><p>Static QR codes do not depend on a paid redirect service. Once downloaded, the QR code points directly to your content and does not expire.</p></article>
+      <article><h2>What can I create?</h2><p>Links, text, email, phone, SMS, WhatsApp, Skype, Zoom, WiFi, contacts, calendar events, maps, PayPal, Bitcoin, social profiles, PDFs, images, and videos.</p></article>
+      <article><h2>Is everything free?</h2><p>Yes. All QR types, downloads, colors, gradients, logo upload, and design options are free with no signup.</p></article>
+    </section>
+  </main>
   <footer><p>Get QR Code is a free browser-based utility. No signup required.</p></footer>
-  <script src="qrcode-generator.js"></script><script src="app.js"></script>
+  <script src="qrcode-matrix.js"></script>
+  <script src="app.js"></script>
 </body>
 </html>
