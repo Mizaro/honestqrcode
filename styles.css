@@ -45,7 +45,7 @@ textarea {
 }
 
 .nav {
-  max-width: 1120px;
+  max-width: 1024px;
   margin: 0 auto 2rem;
   display: flex;
   align-items: center;
@@ -72,7 +72,7 @@ textarea {
 }
 
 .hero {
-  max-width: 1120px;
+  max-width: 1024px;
   margin: 0 auto;
   text-align: center;
 }
@@ -118,15 +118,15 @@ textarea {
 }
 
 .workspace {
-  max-width: 1120px;
+  max-width: 1024px;
   margin: 0 auto 2rem;
   padding: 0 1.25rem;
 }
 
 .workspace-grid {
   display: grid;
-  grid-template-columns: minmax(300px, 360px) minmax(0, 1fr);
-  gap: 1.25rem;
+  grid-template-columns: minmax(340px, 390px) minmax(0, 1fr);
+  gap: 1.5rem;
   align-items: start;
 }
 
@@ -142,6 +142,9 @@ textarea {
 .preview-panel {
   position: sticky;
   top: 1rem;
+  display: grid;
+  gap: 0.95rem;
+  align-content: start;
   padding: 1.25rem;
 }
 
@@ -164,6 +167,10 @@ textarea {
   margin: 0.25rem 0 0;
   color: var(--muted);
   font-size: 0.85rem;
+}
+
+.preview-subhead {
+  max-width: 11rem;
 }
 
 .badge {
@@ -194,14 +201,15 @@ textarea {
 }
 
 .qr-preview {
-  min-height: 280px;
+  aspect-ratio: 1 / 1;
+  min-height: 0;
   display: flex;
   align-items: center;
   justify-content: center;
   border: 1px solid var(--border);
   border-radius: 14px;
   background: repeating-conic-gradient(#f8fafc 0% 25%, #ffffff 0% 50%) 50% / 16px 16px;
-  padding: 1rem;
+  padding: 1.25rem;
   overflow: hidden;
 }
 
@@ -218,9 +226,11 @@ textarea {
 
 .qr-canvas {
   display: block;
+  width: min(100%, 320px);
   max-width: 100%;
   height: auto;
   border-radius: 10px;
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
 }
 
 .status {
@@ -292,11 +302,25 @@ textarea {
 }
 
 .editor-panel {
-  padding: 1.25rem;
+  padding: 1.5rem;
+}
+
+#qr-form {
+  display: grid;
+  gap: 1rem;
+  justify-items: start;
 }
 
 .field-block {
-  margin-bottom: 1.25rem;
+  width: min(100%, 680px);
+  margin-bottom: 0;
+}
+
+.content-block {
+  padding: 1.15rem;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: var(--surface-soft);
 }
 
 label,
@@ -412,6 +436,7 @@ textarea {
 }
 
 .customize-panel {
+  width: min(100%, 680px);
   background: var(--surface-soft);
   border: 1px solid var(--border);
   border-radius: 14px;
@@ -435,7 +460,7 @@ textarea {
 }
 
 .info-grid {
-  max-width: 1120px;
+  max-width: 1024px;
   margin: 0 auto 3rem;
   padding: 0 1.25rem;
   display: grid;
@@ -467,6 +492,12 @@ textarea {
 
   .preview-panel {
     position: static;
+    gap: 0.85rem;
+  }
+
+  .field-block,
+  .customize-panel {
+    width: 100%;
   }
 }
 
