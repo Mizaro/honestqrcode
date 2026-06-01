@@ -4,22 +4,22 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Get QR Code | Free Permanent QR Codes That Never Expire</title>
-  <meta name="description" content="Create free permanent QR codes that never expire. Generate QR codes for websites, WiFi, WhatsApp, contacts, payments, events, files, and more.">
+  <meta name="description" content="Create free permanent QR codes that never expire. No signup, no expiration, generated locally in your browser.">
   <meta name="robots" content="index,follow">
   <meta name="theme-color" content="#0f172a">
   <link rel="canonical" href="https://getqrcode.com/">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css?v=20260601-2255">
 </head>
 <body>
   <header class="site-header">
     <nav class="nav" aria-label="Main">
       <a class="brand" href="/">Get QR Code</a>
-      <a class="nav-cta" href="#generator">Open generator</a>
+      <a class="nav-cta" href="https://buymeacoffee.com/yourname" target="_blank" rel="noopener noreferrer">Buy Me a Coffee</a>
     </nav>
     <div class="hero">
-      <p class="eyebrow">Free static QR codes</p>
-      <h1>Simple QR generator</h1>
-      <p class="hero-lead">Generate permanent QR codes for links, WiFi, contacts, events, payments, and files without redirects or signup.</p>
+      <p class="eyebrow">Free · Permanent · Private</p>
+      <h1>Create QR codes that never expire</h1>
+      <p class="hero-lead">Built in your browser. No account, no redirects, no tracking.</p>
     </div>
   </header>
 
@@ -27,26 +27,20 @@
     <div class="workspace-grid">
       <section class="preview-panel" aria-label="QR preview">
         <div class="preview-header">
-          <div>
-            <h2>Preview</h2>
-            <p class="preview-subhead">Scannable preview.</p>
-          </div>
-          <span id="preview-badge" class="badge badge-idle">Waiting</span>
+          <h2>Preview</h2>
+          <span id="preview-badge" class="badge badge-idle">Waiting for input</span>
         </div>
-
         <div id="qr-preview" class="qr-preview" role="img" aria-label="QR code preview">
           <div class="preview-empty" id="preview-empty">
             <div class="preview-empty-icon" aria-hidden="true">▦</div>
-            <p>Your QR code will appear here.</p>
+            <p>Your QR code appears here as you fill in the form.</p>
           </div>
         </div>
-
         <p id="status" class="status" role="status" aria-live="polite"></p>
-
         <div class="download-row">
           <button id="download-png" class="btn btn-primary" type="button" disabled>Download PNG</button>
-          <button id="download-svg" class="btn btn-secondary" type="button" disabled>Download SVG</button>
-          <button id="download-jpg" class="btn btn-secondary" type="button" disabled>Download JPG</button>
+          <button id="download-svg" class="btn btn-secondary" type="button" disabled>SVG</button>
+          <button id="download-jpg" class="btn btn-secondary" type="button" disabled>JPG</button>
           <button id="copy-payload" class="btn btn-ghost" type="button" disabled>Copy data</button>
         </div>
       </section>
@@ -56,14 +50,11 @@
           <div class="field-block">
             <label for="qr-type-select">What should this QR code open?</label>
             <select id="qr-type-select" name="qr-type"></select>
-            <div id="quick-types" class="quick-types" aria-label="Popular QR types"></div>
+            <div class="quick-types" id="quick-types" aria-label="Popular types"></div>
           </div>
 
           <div class="field-block content-block">
-            <div class="content-heading-row">
-              <h3 id="content-heading">Content</h3>
-              <p id="content-help" class="content-help">Pick a type to begin.</p>
-            </div>
+            <h3 id="content-heading">Content</h3>
             <div id="dynamic-fields" class="dynamic-fields"></div>
           </div>
 
@@ -77,37 +68,29 @@
                 <option value="2048">2048 px</option>
                 <option value="256">256 px</option>
               </select>
-
               <label for="qr-ecc">Error correction</label>
-              <select id="qr-ecc" title="Use High when adding a logo">
+              <select id="qr-ecc" title="Use High if you add a logo">
                 <option value="M" selected>Medium</option>
                 <option value="L">Low</option>
                 <option value="Q">Quartile</option>
-                <option value="H">High</option>
+                <option value="H">High (best for logos)</option>
               </select>
-
               <label for="dark-color">QR color</label>
               <input id="dark-color" type="color" value="#0f172a">
-
               <label for="light-color">Background</label>
               <input id="light-color" type="color" value="#ffffff">
-
               <label class="check" for="transparent-bg"><input id="transparent-bg" type="checkbox"> Transparent background</label>
-              <label class="check" for="gradient-enable"><input id="gradient-enable" type="checkbox"> Add gradient</label>
-
+              <label class="check" for="gradient-enable"><input id="gradient-enable" type="checkbox"> Gradient</label>
               <label for="gradient-color">Gradient end</label>
               <input id="gradient-color" type="color" value="#2563eb" disabled>
-
-              <label for="module-style">Module style</label>
+              <label for="module-style">Dot shape</label>
               <select id="module-style">
                 <option value="square">Square</option>
                 <option value="rounded" selected>Rounded</option>
                 <option value="dot">Circle</option>
               </select>
-
               <label for="logo-file">Logo (optional)</label>
               <input id="logo-file" type="file" accept="image/png,image/jpeg,image/webp,image/svg+xml">
-
               <label for="frame-label">Caption below QR</label>
               <input id="frame-label" type="text" placeholder="Scan me">
             </div>
@@ -117,13 +100,15 @@
     </div>
   </main>
 
-  <p class="utility-note">Static by default. Review the preview, then download your QR as PNG, JPG, or SVG.</p>
+  <section class="info-grid" aria-label="More information">
+    <article><h2>Permanent by default</h2><p>Static QR codes point straight to your content. They do not expire when a SaaS trial ends.</p></article>
+    <article><h2>Private</h2><p>Generation runs locally. Your data is not sent to our servers.</p></article>
+    <article><h2>Free</h2><p>All types, downloads, colors, and logo upload are free.</p></article>
+  </section>
 
-  <footer class="site-footer">
-    <p>Get QR Code — free browser utility. No signup required.</p>
-  </footer>
+  <footer class="site-footer"><p>Get QR Code — free browser utility. No signup required.</p></footer>
 
-  <script src="qrcode-matrix.js"></script>
-  <script src="app.js"></script>
+  <script src="qrcode-matrix.js?v=20260601-2255"></script>
+  <script src="app.js?v=20260601-2255"></script>
 </body>
 </html>
