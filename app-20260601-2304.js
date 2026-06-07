@@ -68,6 +68,7 @@
   const contentHeading = document.getElementById('content-heading');
   const contentHelp = document.getElementById('content-help');
   const statusEl = document.getElementById('status');
+  const sharePngBtn = document.getElementById('share-png');
   const downloadPng = document.getElementById('download-png');
   const downloadJpg = document.getElementById('download-jpg');
   const downloadSvg = document.getElementById('download-svg');
@@ -537,10 +538,30 @@
   }
 
   function setDownloads(enabled) {
+    if (sharePngBtn) sharePngBtn.disabled = !enabled;
     downloadPng.disabled = !enabled;
     downloadJpg.disabled = !enabled;
     downloadSvg.disabled = !enabled;
     copyPayloadBtn.disabled = !enabled;
+  }
+
+  function canSharePngFile() {
+    if (!navigator.share) return false;
+    try {
+      const probe = new File([''], 'qrcode.png', { type: 'image/png' });
+      return !navigator.canShare || navigator.canShare({ files: [probe] });
+    } catch (error) {
+      return false;
+    }
+  }
+
+  function canvasToPngBlob(canvas) {
+    return new Promise((resolve, reject) => {
+      canvas.toBlob((blob) => {
+        if (blob) resolve(blob);
+        else reject(new Error('Failed to create PNG image.'));
+      }, 'image/png');
+    });
   }
 
   function showCanvas(canvas) {
@@ -699,6 +720,28 @@
     setTimeout(() => URL.revokeObjectURL(url), 1000);
   }
 
+  async function sharePng() {
+    if (!lastCanvas) return;
+
+    try {
+      const blob = await canvasToPngBlob(lastCanvas);
+      const file = new File([blob], 'qrcode.png', { type: 'image/png' });
+      const shareData = { files: [file], title: 'QR Code' };
+
+      if (navigator.canShare && !navigator.canShare(shareData)) {
+        downloadCurrentCanvas('png');
+        return;
+      }
+
+      await navigator.share(shareData);
+      statusEl.textContent = 'Shared QR code image.';
+      statusEl.className = 'status status-ok';
+    } catch (error) {
+      if (error.name === 'AbortError') return;
+      downloadCurrentCanvas('png');
+    }
+  }
+
   function downloadCurrentCanvas(format) {
     if (!lastCanvas) return;
 
@@ -721,6 +764,11 @@
     link.href = lastCanvas.toDataURL('image/png');
     link.download = 'qrcode.png';
     link.click();
+  }
+
+  if (sharePngBtn && canSharePngFile()) {
+    sharePngBtn.classList.add('share-available');
+    sharePngBtn.addEventListener('click', sharePng);
   }
 
   downloadPng.addEventListener('click', () => downloadCurrentCanvas('png'));

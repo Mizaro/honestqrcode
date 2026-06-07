@@ -235,6 +235,17 @@ textarea {
   margin-top: 0.25rem;
 }
 
+#share-png {
+  display: none;
+}
+
+@media (max-width: 900px) {
+  #share-png.share-available {
+    display: block;
+    grid-column: 1 / -1;
+  }
+}
+
 .btn {
   border: 0;
   border-radius: 12px;
