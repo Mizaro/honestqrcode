@@ -72,6 +72,8 @@
   const downloadJpg = document.getElementById('download-jpg');
   const downloadSvg = document.getElementById('download-svg');
   const copyPayloadBtn = document.getElementById('copy-payload');
+  const generateBtn = document.getElementById('generate-qr');
+  const previewPanel = document.getElementById('preview-panel');
 
   let activeType = 'link';
   let debounceTimer = null;
@@ -591,6 +593,23 @@
     debounceTimer = setTimeout(updatePreview, 250);
   }
 
+  function isMobileLayout() {
+    return window.matchMedia('(max-width: 900px)').matches;
+  }
+
+  function scrollToPreview() {
+    if (!previewPanel) return;
+    previewPanel.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  function handleGenerate() {
+    clearTimeout(debounceTimer);
+    updatePreview();
+    if (lastCanvas && isMobileLayout()) {
+      scrollToPreview();
+    }
+  }
+
   function bindDynamicFields() {
     fields.querySelectorAll('input, textarea, select').forEach((element) => {
       element.addEventListener('input', scheduleUpdate);
@@ -724,8 +743,12 @@
     }
   });
 
-  form.addEventListener('submit', (event) => event.preventDefault());
+  form.addEventListener('submit', (event) => {
+    event.preventDefault();
+    handleGenerate();
+  });
   typeSelect.addEventListener('change', () => setType(typeSelect.value));
+  generateBtn.addEventListener('click', handleGenerate);
 
   renderTypeSelect();
   renderQuickTypes();

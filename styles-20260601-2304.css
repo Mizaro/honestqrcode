@@ -129,6 +129,7 @@ textarea {
   gap: 0.8rem;
   align-content: start;
   padding: 1rem;
+  scroll-margin-top: 1rem;
 }
 
 .preview-header {
@@ -439,6 +440,31 @@ textarea {
   grid-column: 1 / -1;
 }
 
+.generate-row {
+  display: none;
+}
+
+.btn-generate {
+  width: 100%;
+  background: var(--accent);
+  color: #ffffff;
+  font-size: 1rem;
+  padding: 0.9rem 1rem;
+  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.22);
+}
+
+.btn-generate:hover:not(:disabled) {
+  background: #1d4ed8;
+  transform: translateY(-1px);
+}
+
+.generate-hint {
+  margin: 0.55rem 0 0;
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.82rem;
+}
+
 .utility-note {
   max-width: 960px;
   margin: 0 auto 1.5rem;
@@ -462,12 +488,16 @@ textarea {
 
   .preview-panel {
     position: static;
-    order: 1;
+    order: 2;
     gap: 0.85rem;
   }
 
   .editor-panel {
-    order: 2;
+    order: 1;
+  }
+
+  .generate-row {
+    display: block;
   }
 }
 

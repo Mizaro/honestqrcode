@@ -25,7 +25,7 @@
 
   <main class="workspace" id="generator">
     <div class="workspace-grid">
-      <section class="preview-panel" aria-label="QR preview">
+      <section class="preview-panel" id="preview-panel" aria-label="QR preview">
         <div class="preview-header">
           <div>
             <h2>Preview</h2>
@@ -65,6 +65,11 @@
               <p id="content-help" class="content-help">Pick a type to begin.</p>
             </div>
             <div id="dynamic-fields" class="dynamic-fields"></div>
+          </div>
+
+          <div class="generate-row">
+            <button id="generate-qr" class="btn btn-generate" type="button">Generate QR code</button>
+            <p class="generate-hint">Fill in your details, then tap to see your scannable code.</p>
           </div>
 
           <details class="customize-panel">
