@@ -1,0 +1,17 @@
+{
+  "name": "Honest QR Code",
+  "short_name": "Honest QR",
+  "description": "Free, open-source QR code generation in your browser.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f4f7f6",
+  "theme_color": "#07111f",
+  "icons": [
+    {
+      "src": "/assets/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

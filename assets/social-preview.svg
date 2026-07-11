@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="640" viewBox="0 0 1280 640" role="img" aria-labelledby="title desc">
+  <title id="title">Honest QR Code</title>
+  <desc id="desc">Free open-source QR code generator that runs in your browser.</desc>
+  <defs>
+    <radialGradient id="glow" cx="0" cy="0" r="1" gradientTransform="translate(170 150) rotate(35) scale(650 500)" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0f766e" stop-opacity=".55"/>
+      <stop offset="1" stop-color="#07111f" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="22" stdDeviation="22" flood-color="#000" flood-opacity=".35"/></filter>
+  </defs>
+  <rect width="1280" height="640" fill="#07111f"/>
+  <rect width="1280" height="640" fill="url(#glow)"/>
+  <g transform="translate(78 64)">
+    <rect width="48" height="48" rx="11" fill="#ffcf5c"/>
+    <text x="24" y="33" text-anchor="middle" font-family="Inter,Segoe UI,sans-serif" font-size="26" font-weight="900" fill="#07111f">H</text>
+    <text x="64" y="33" font-family="Inter,Segoe UI,sans-serif" font-size="25" font-weight="800" fill="#fff">Honest QR Code</text>
+  </g>
+  <g transform="translate(78 176)">
+    <rect width="278" height="38" rx="19" fill="#0f766e" fill-opacity=".25" stroke="#5eead4" stroke-opacity=".35"/>
+    <text x="139" y="25" text-anchor="middle" font-family="Inter,Segoe UI,sans-serif" font-size="16" font-weight="800" fill="#bff5e9">FREE · OPEN SOURCE · PRIVATE</text>
+    <text y="112" font-family="Inter,Segoe UI,sans-serif" font-size="66" font-weight="900" letter-spacing="-3" fill="#fff">QR codes without</text>
+    <text y="182" font-family="Inter,Segoe UI,sans-serif" font-size="66" font-weight="900" letter-spacing="-3" fill="#fff">the catch.</text>
+    <text y="238" font-family="Inter,Segoe UI,sans-serif" font-size="24" fill="#c2d0d9">No signup. No redirects. No hidden expiry.</text>
+    <text y="278" font-family="Inter,Segoe UI,sans-serif" font-size="20" font-weight="700" fill="#5eead4">honestqrcode.com  ·  github.com/Mizaro/honestqrcode</text>
+  </g>
+  <g transform="translate(914 108)" filter="url(#shadow)">
+    <rect width="282" height="282" rx="28" fill="#fff"/>
+    <g fill="#07111f">
+      <path d="M28 28h74v74H28zm16 16v42h42V44zM180 28h74v74h-74zm16 16v42h42V44zM28 180h74v74H28zm16 16v42h42v-42z" fill-rule="evenodd"/>
+      <rect x="58" y="58" width="14" height="14"/>
+      <rect x="210" y="58" width="14" height="14"/>
+      <rect x="58" y="210" width="14" height="14"/>
+      <path d="M122 30h18v18h-18zm28 0h18v18h-18zm-28 28h18v18h-18zm28 28h18v18h-18zm-28 28h18v18h-18zm28 0h18v18h-18zm28 0h18v18h-18zm-56 28h18v18h-18zm28 0h18v18h-18zm56 0h18v18h-18zm28 0h18v18h-18zm-112 28h18v18h-18zm28 0h18v18h-18zm28 0h18v18h-18zm56 0h18v18h-18zm-84 28h18v18h-18zm28 0h18v18h-18zm28 0h18v18h-18zm28 0h18v18h-18zm28 0h18v18h-18zm-112 28h18v18h-18zm56 0h18v18h-18zm56 0h18v18h-18zm-84 28h18v18h-18zm28 0h18v18h-18zm56 0h18v18h-18z"/>
+    </g>
+    <rect x="117" y="117" width="48" height="48" rx="11" fill="#ffcf5c"/>
+    <text x="141" y="150" text-anchor="middle" font-family="Inter,Segoe UI,sans-serif" font-size="26" font-weight="900" fill="#07111f">H</text>
+  </g>
+  <g transform="translate(914 430)">
+    <circle cx="10" cy="10" r="10" fill="#0d9488"/><path d="m5 10 3 3 7-7" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="30" y="16" font-family="Inter,Segoe UI,sans-serif" font-size="19" font-weight="700" fill="#d9f4ef">Generated locally</text>
+    <circle cx="10" cy="50" r="10" fill="#0d9488"/><path d="m5 50 3 3 7-7" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="30" y="56" font-family="Inter,Segoe UI,sans-serif" font-size="19" font-weight="700" fill="#d9f4ef">Apache-2.0 licensed</text>
+  </g>
+</svg>

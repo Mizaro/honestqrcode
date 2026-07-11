@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Honest QR Code icon">
+  <rect width="64" height="64" rx="14" fill="#07111f"/>
+  <rect x="10" y="10" width="17" height="17" rx="2" fill="none" stroke="#ffcf5c" stroke-width="5"/>
+  <rect x="37" y="10" width="17" height="17" rx="2" fill="none" stroke="#ffcf5c" stroke-width="5"/>
+  <rect x="10" y="37" width="17" height="17" rx="2" fill="none" stroke="#ffcf5c" stroke-width="5"/>
+  <path d="M38 38h7v7h-7zm9 0h7v16h-7zm-9 9h7v7h-7z" fill="#5eead4"/>
+</svg>

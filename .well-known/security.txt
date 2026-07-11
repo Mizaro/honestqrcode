@@ -1,0 +1,5 @@
+Contact: https://github.com/Mizaro/honestqrcode/security/advisories/new
+Canonical: https://honestqrcode.com/.well-known/security.txt
+Policy: https://github.com/Mizaro/honestqrcode/blob/main/SECURITY.md
+Preferred-Languages: en
+Expires: 2027-07-11T00:00:00.000Z
