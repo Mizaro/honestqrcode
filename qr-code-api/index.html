@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Open-Source QR Code API in Rust — Self-Host Anywhere</title>
+  <meta name="description" content="A fast, private, open-source QR Code API in Rust. Generate PNG, SVG, or matrix output and self-host it as a server, container, Lambda function, CLI, or library.">
+  <meta name="robots" content="index,follow,max-image-preview:large"><meta name="theme-color" content="#07111f">
+  <link rel="canonical" href="https://honestqrcode.com/qr-code-api/">
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="/styles.css?v=20260711">
+  <meta property="og:type" content="website"><meta property="og:site_name" content="Honest QR Code"><meta property="og:title" content="Open-Source QR Code API in Rust"><meta property="og:description" content="Fast, private QR rendering for servers, containers, Lambda, CLI, and Rust applications."><meta property="og:url" content="https://honestqrcode.com/qr-code-api/"><meta property="og:image" content="https://honestqrcode.com/assets/social-preview.png"><meta name="twitter:card" content="summary_large_image">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Honest QR Code API","applicationCategory":"DeveloperApplication","operatingSystem":"Linux, macOS, Windows, containers, AWS Lambda","url":"https://honestqrcode.com/qr-code-api/","downloadUrl":"https://github.com/Mizaro/honestqrcode-api","codeRepository":"https://github.com/Mizaro/honestqrcode-api","license":"https://www.apache.org/licenses/LICENSE-2.0","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
+</head>
+<body class="seo-page">
+  <header class="site-header">
+    <nav class="nav" aria-label="Main navigation"><a class="brand" href="/"><span class="brand-mark" aria-hidden="true">H</span><span>Honest QR Code</span></a><div class="nav-links"><a href="/#generator">Browser generator</a><a class="github-link" href="https://github.com/Mizaro/honestqrcode-api" target="_blank" rel="noopener">↗ API source on GitHub</a></div></nav>
+    <div class="hero"><p class="open-source-pill">Rust · Apache-2.0 · zero storage</p><h1>A QR Code API you can actually own</h1><p class="hero-lead">Fast, deterministic QR rendering with no database, tracking, or payload logging. Deploy the same open-source engine as a server, container, Lambda function, CLI, or Rust library.</p><div class="hero-actions"><a class="btn btn-primary hero-button" href="https://github.com/Mizaro/honestqrcode-api" target="_blank" rel="noopener">Get the API on GitHub</a><a class="btn btn-secondary hero-button" href="https://github.com/Mizaro/honestqrcode-api#run-it-in-30-seconds" target="_blank" rel="noopener">Deploy in 30 seconds</a></div></div>
+  </header>
+  <main class="article-shell">
+    <h2>One renderer, every deployment shape</h2>
+    <p>Honest QR Code API generates PNG, SVG, and JSON module matrices from text, URLs, WiFi credentials, contact cards, email, phone, SMS, WhatsApp, locations, and calendar events. Inputs are bounded, output is deterministic, and generated codes are tested with an independent decoder.</p>
+    <div class="callout"><strong>Private by construction:</strong> the application stores nothing, makes no outbound request, and does not log request bodies or QR payloads. Use POST for sensitive values so they do not appear in query-string logs.</div>
+
+    <h2>Run the container</h2>
+    <pre class="code-window"><code>docker run --rm -p 8080:8080 \
+  ghcr.io/mizaro/honestqrcode-api:latest
+
+curl "http://localhost:8080/v1/qr?data=Hello%20world" \
+  --output hello.png</code></pre>
+    <p>The scratch-based image runs without root privileges and supports both AMD64 and ARM64. Health checks, readiness, OpenMetrics, structured logs, request limits, deadlines, OpenAPI, and graceful shutdown are built in.</p>
+
+    <h2>Structured, private generation</h2>
+    <pre class="code-window"><code>curl -X POST http://localhost:8080/v1/qr \
+  -H "content-type: application/json" \
+  --output wifi.svg \
+  -d '{
+    "data": {
+      "kind": "wifi",
+      "ssid": "My Network",
+      "password": "secret",
+      "security": "wpa"
+    },
+    "render": { "format": "svg", "width": 512 }
+  }'</code></pre>
+
+    <h2>Open source stays open</h2>
+    <p>The API is available under Apache-2.0. You can inspect it, fork it, modify it, run it commercially, and deploy it on your own infrastructure under the license terms. A future managed service may charge for hosted capacity, scale, support, and an SLA—not for access to the frontend or the self-hosted engine.</p>
+    <p>The free browser generator remains independent and creates QR codes locally without calling this API.</p>
+
+    <h2>Deploy where you already work</h2>
+    <p>The repository includes a minimal Dockerfile, Docker Compose, hardened Kubernetes manifests, an AWS SAM template for Lambda, a systemd unit, a command-line tool, generated OpenAPI, and CI that verifies Rust, containers, licenses, and security advisories.</p>
+    <div class="hero-actions"><a class="btn btn-primary hero-button" href="https://github.com/Mizaro/honestqrcode-api" target="_blank" rel="noopener">View source and deployment guides</a><a class="btn btn-secondary hero-button" href="/#generator">Use the free browser tool</a></div>
+  </main>
+  <footer class="site-footer"><div><a class="brand footer-brand" href="/"><span class="brand-mark" aria-hidden="true">H</span><span>Honest QR Code</span></a><p>Free in the browser. Open on your infrastructure.</p></div><nav aria-label="Footer navigation"><a href="/#generator">Generator</a><a href="https://github.com/Mizaro/honestqrcode-api" target="_blank" rel="noopener">API GitHub</a><a href="https://github.com/Mizaro/honestqrcode-api/blob/main/LICENSE" target="_blank" rel="noopener">Apache-2.0</a></nav></footer>
+</body>
+</html>

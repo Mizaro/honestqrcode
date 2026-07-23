@@ -8,6 +8,8 @@ Free, open-source QR code generation that runs entirely in your browser.
 
 [Use the live generator](https://honestqrcode.com/) · [Report a bug](https://github.com/Mizaro/honestqrcode/issues/new?template=bug_report.yml) · [Request a feature](https://github.com/Mizaro/honestqrcode/issues/new?template=feature_request.yml)
 
+Need server-side or batch generation? See the open-source [Honest QR Code API](https://github.com/Mizaro/honestqrcode-api), available as a Rust server, container, AWS Lambda function, CLI, and library.
+
 ![Honest QR Code demo](assets/demo.gif)
 
 [Watch the lightweight MP4 demo](assets/demo.mp4) · [View the full-size screenshot](assets/screenshot.png)
